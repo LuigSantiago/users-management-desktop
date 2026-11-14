@@ -23,7 +23,7 @@ public final class Main {
 
   public static void main(final String[] args) {
     log.info("Starting CEA Management System...");
-    final DependencyContainer container = new DependencyContainer();
+    //final DependencyContainer container = new DependencyContainer();
 
     final PuertoRepositorioModeloVehiculo repoVehiculos = new RepositorioModeloVehiculoEnMemoria();
     final CrearModeloVehiculoCasoUso crearVehiculo = new CrearModeloVehiculoCasoUso(repoVehiculos);
@@ -47,6 +47,7 @@ public final class Main {
 
         switch (opcion) {
           case "1":
+            final DependencyContainer container = new DependencyContainer();
             new UserManagementCli(container.userController(), new ConsoleIO(scanner, System.out)).start();
             break;
           case "2":
