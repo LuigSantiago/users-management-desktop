@@ -1,10 +1,10 @@
 package com.jcaa.usersmanagement;
 
+import com.jcaa.usersmanagement.application.usecase.CrearModeloVehiculoCasoUso;
 import com.jcaa.usersmanagement.application.usecase.ActualizarModeloVehiculoCasoUso;
-import com.jcaa.usersmanagement.application.usecases.CrearModeloVehiculoCasoUso;
-import com.jcaa.usersmanagement.application.usecases.EliminarModeloVehiculoCasoUso;
-import com.jcaa.usersmanagement.application.usecases.ListarModelosVehiculoCasoUso;
-import com.jcaa.usersmanagement.application.usecases.ObtenerModeloVehiculoPorIdCasoUso;
+import com.jcaa.usersmanagement.application.usecase.EliminarModeloVehiculoCasoUso;
+import com.jcaa.usersmanagement.application.usecase.ListarModelosVehiculoCasoUso;
+import com.jcaa.usersmanagement.application.usecase.ObtenerModeloVehiculoPorIdCasoUso;
 import com.jcaa.usersmanagement.domain.model.ModeloVehiculo;
 import com.jcaa.usersmanagement.domain.ports.PuertoRepositorioModeloVehiculo;
 import com.jcaa.usersmanagement.infrastructure.adapter.RepositorioModeloVehiculoEnMemoria;
@@ -25,7 +25,6 @@ public final class Main {
     log.info("Starting CEA Management System...");
     final DependencyContainer container = new DependencyContainer();
 
-    // Inicialización del Adaptador y Casos de Uso de Vehículos
     final PuertoRepositorioModeloVehiculo repoVehiculos = new RepositorioModeloVehiculoEnMemoria();
     final CrearModeloVehiculoCasoUso crearVehiculo = new CrearModeloVehiculoCasoUso(repoVehiculos);
     final ListarModelosVehiculoCasoUso listarVehiculos = new ListarModelosVehiculoCasoUso(repoVehiculos);
